@@ -69,12 +69,12 @@
 	height: 448px;
 	width: 221px;
 	position: relative;
-	top: -6px;
+	top: 0px;
+	left: 471px;
 }
 #container #bio_background #bio_text {
 	position: absolute;
 	left: 471px;
-	top: -6px;
 }
 #container #bio_background #bio_text {
 	font-family: InaiMathi, Arial, sans-serif;
