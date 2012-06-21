@@ -74,6 +74,7 @@
 #container #bio_background #bio_text {
 	position: absolute;
 	left: 471px;
+	top: 8px;
 }
 #container #bio_background #bio_text {
 	font-family: InaiMathi, Arial, sans-serif;
