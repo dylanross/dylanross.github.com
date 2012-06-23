@@ -135,7 +135,7 @@
 	font-weight: lighter;
 	color: #999;
 	position: absolute;
-	bottom: 3px;
+	top: 60px;
 	left: 0px;
 }
 #container #live_background #live_text_column_1 p {
@@ -155,7 +155,7 @@
 	font-weight: lighter;
 	color: #999;
 	position: absolute;
-	top : 70px;
+	top : 60px;
 	left: 469px;
 	width: 217px;
 	text-align: justify;
