@@ -178,21 +178,6 @@
 	position: absolute;
 	top: 8px;
 }
-#container #music_background #blank_button img {
-	position: absolute;
-	bottom: 678px;
-	left: 696px;
-	height: 60px;
-	width: 71px;
-}
-
-#container #music_background #music_button img {
-	position: absolute;
-	bottom: 678px;
-	left: 698px;
-	height: 24px;
-	width: 71px;
-}
 #container #software_background {
 	position: relative;
 	height: 900px;
