@@ -259,6 +259,13 @@
 	width: 238px;
 	position: absolute;
 }
+#software_background {
+	background-image: url(../Exported%20Slices/images/SoftwareBackground.jpg);
+	background-repeat: no-repeat;
+	position: relative;
+	height: 900px;
+	width: 935px;
+}
 #container #software_background #software_text_column_1 {
 	font-family: InaiMathi, Arial, sans-serif;
 	font-size: 14px;
