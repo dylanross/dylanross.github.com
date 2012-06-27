@@ -41,7 +41,7 @@
 }
 #container #background #software_button img {
 	position: absolute;
-	top: 675px;
+	top: 675photopx;
 }
 #container #bio_background {
 	background-image: url(../Exported%20Slices/images/BioBackground.jpg);
@@ -178,11 +178,6 @@
 	position: absolute;
 	top: 8px;
 }
-#container #software_background {
-	position: relative;
-	height: 900px;
-	width: 935px;
-}
 #container #comic_background #home_button img {
 	position: absolute;
 	top: 8px;
@@ -254,6 +249,10 @@
 	background-color: #FFF;
 	width: 238px;
 	position: absolute;
+}
+#software_background #home_button {
+	position: absolute;
+	top: 8px;
 }
 #software_background {
 	background-image: url(../Exported%20Slices/images/SoftwareBackground.jpg);
