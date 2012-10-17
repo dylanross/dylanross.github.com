@@ -1,51 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>RETINA</title>
-		<link href="Styles/retina.css" rel="stylesheet" type="text/css" />
-		<script>
-		function load()
-		{
-			changeOpacity('block', 0.0);
-			setInterval(function() { frame(); }, 33);
-		}
-		
-		function changeOpacity( imageid, opacity)
-		{
-			var img = document.getElementById(imageid);
-			img.style.filter       = "alpha(opacity=" + (opacity * 100) + ");";
-			img.style.MozOpacity   = opacity;
-			img.style.opacity      = opacity;
-			img.style.KhtmlOpacity = opacity;
-		}
-		
-		function frame()
-		{
-			var result = (Math.random() * 100);
-			if (result < 0.2)
-			{
-				changeOpacity('block', 1.0);
-				setTimeout(function() { changeOpacity('block', 0.0); }, Math.random() * 100);
-			}
-			else
-			{
-				changeOpacity('image2', Math.random())
-			}
-		}
-		</script>
-	</head>
-	
-	<body onload='load()'>
-		<div id="container">
-			<div id="background">
-				<img id='image1' src="https://github.com/dylanross/retina/raw/gh-pages/Images/HomePage4.png" />
-				<img id='image2' src="https://github.com/dylanross/retina/raw/gh-pages/Images/HomePage3.png" />
-		
-				<div id="home_text">installation by dylan ross | coming soon</div>
-			
-				<img id='block' src="https://github.com/dylanross/retina/raw/gh-pages/Images/block.png" height='700' width='700'/>
-			</div>
-		</div>
-	</body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1138.51">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Andale Mono'}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Andale Mono'; min-height: 14.0px}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1"><span class="Apple-tab-span">	</span>&lt;head&gt;</p>
+<p class="p1"><span class="Apple-tab-span">	</span>&lt;/head&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>&lt;body&gt;</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Hello</p>
+<p class="p1"><span class="Apple-tab-span">	</span>&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
 </html>
