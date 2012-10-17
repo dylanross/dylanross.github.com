@@ -2,19 +2,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>dylan ross</title>
-		<link href="Styles/experimental-electronic.css" rel="stylesheet" type="text/css" />
+		<title>RETINA</title>
+		<link href="Styles/retina.css" rel="stylesheet" type="text/css" />
+		<script>
+		function load()
+		{
+			changeOpacity('block', 0.0);
+			setInterval(function() { frame(); }, 33);
+		}
+		
+		function changeOpacity( imageid, opacity)
+		{
+			var img = document.getElementById(imageid);
+			img.style.filter       = "alpha(opacity=" + (opacity * 100) + ");";
+			img.style.MozOpacity   = opacity;
+			img.style.opacity      = opacity;
+			img.style.KhtmlOpacity = opacity;
+		}
+		
+		function frame()
+		{
+			var result = (Math.random() * 100);
+			if (result < 0.2)
+			{
+				changeOpacity('block', 1.0);
+				setTimeout(function() { changeOpacity('block', 0.0); }, Math.random() * 100);
+			}
+			else
+			{
+				changeOpacity('image2', Math.random())
+			}
+		}
+		</script>
 	</head>
-
-	<body>
+	
+	<body onload='load()'>
 		<div id="container">
 			<div id="background">
-    				<div id="home_button"><img src="Exported Slices/images/home_button.jpg" alt="home" width="67" height="25" /></div>
-				<div id="bio_button"><a href="bio.html"><img src="Exported Slices/images/bio_button.jpg" alt="bio" width="37" height="25" /></a></div>
-				<div id="live_button"><a href="live.html"><img src="Exported Slices/images/live_button.jpg" alt="live" width="40" height="25" /></a></div>
-				<div id="music_button"><a href="music.html"><img src="Exported Slices/images/music_button.jpg" alt="music" width="71" height="24"></a></div>
-				<div id="comic_button"><a href="comic.html"><img src="Exported Slices/images/comic_button.jpg" alt="comic" width="71" height="24" /></a></div>
-				<div id="software_button"><a href="software.html"><img src="Exported Slices/images/software_button.jpg" alt="software" width="105" height="26" /></a></div>
+				<img id='image1' src="https://github.com/dylanross/retina/raw/gh-pages/Images/HomePage4.png" />
+				<img id='image2' src="https://github.com/dylanross/retina/raw/gh-pages/Images/HomePage3.png" />
+		
+				<div id="home_text">installation by dylan ross | coming soon</div>
+			
+				<img id='block' src="https://github.com/dylanross/retina/raw/gh-pages/Images/block.png" height='700' width='700'/>
 			</div>
 		</div>
 	</body>
