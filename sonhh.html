@@ -24,10 +24,10 @@
 
 		function play_sine() {
 			osc = context.createOscillator();
-			oscillator.type = 0; // sine wave
-			oscillator.frequency.value = 2000;
-			oscillator.connect(context.destination);
-			oscillator.noteOn && oscillator.noteOn(0);
+			osc.type = 0; // sine wave
+			osc.frequency.value = 2000;
+			osc.connect(context.destination);
+			osc.noteOn && osc.noteOn(0);
 		}
 
 		</script>
