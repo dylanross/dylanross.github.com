@@ -18,6 +18,16 @@
 			catch(e) {
 				alert('Web Audio API is not supported in this browser');
 			}
+
+			play_sine();
+		}
+
+		function play_sine() {
+			osc = context.createOscillator();
+			oscillator.type = 0; // sine wave
+			oscillator.frequency.value = 2000;
+			oscillator.connect(context.destination);
+			oscillator.noteOn && oscillator.noteOn(0);
 		}
 
 		</script>
