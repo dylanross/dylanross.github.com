@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser(description='Search for chaos.')
 #parser.add_argument('-i', dest='maxiterations' metavar='N', type=int,
 #            help='Maximum iterations.')
 
-OUTPUT_PATH = "/srv/http/images/attractor.png"
+OUTPUT_PATH = "../images/attractor.png"
 
 args = parser.parse_args()
 
