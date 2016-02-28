@@ -6,22 +6,26 @@ html, body {
 
 /* unvisited link */
 a:link {
-    color: yellow;
+    /*color: yellow;*/
+    color: black;
 }
 
 /* visited link */
 a:visited {
-    color: yellow;
+    /*color: yellow;*/
+    color: black;
 }
 
 /* mouse over link */
 a:hover {
-    color: yellow;
+    */color: yellow;*/
+    color: black;
 }
 
 /* selected link */
 a:active {
-    color: yellow;
+    /*color: yellow;*/
+    color: black;
 }
 
 
@@ -32,6 +36,16 @@ a:active {
 	background-image: url("../images/background_stars.jpg");
 	background-size: 200px 200px;
 	color: yellow;
+	text-align: center;
+}
+
+
+.alt_home_background {
+	top: 0px;
+	min-height: 100%;
+	width: 100%;
+	background-size: 200px 200px;
+	color: black;
 	text-align: center;
 }
 
@@ -49,7 +63,7 @@ a:active {
 
 #home_float {
 	position: relative;
-	top: 50px;
+	top: 20px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
