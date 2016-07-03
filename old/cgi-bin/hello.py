@@ -1,25 +1,19 @@
+#!/usr/bin/python2
+
 # Python port of Paul Bourke's lyapunov/gen.c
 # By Johan Bichel Lindegaard - http://johan.cc
 
 import math
+import cStringIO
 import random
 from PIL import Image, ImageDraw
-import argparse
 
-parser = argparse.ArgumentParser(description='Search for chaos.')
-#parser.add_argument('-i', dest='maxiterations' metavar='N', type=int,
-#            help='Maximum iterations.')
 
-OUTPUT_COLOUR = "grey"
-OUTPUT_PATH = "../images/attractor.png"
-
-args = parser.parse_args()
-
-MAXITERATIONS = 100000
-#NEXAMPLES = 1000
+MAXITERATIONS = 50000
+NEXAMPLES = 1000
 
 def createAttractor():
-    while True :
+    for n in range(NEXAMPLES):        
         lyapunov = 0
         xmin= 1e32
         xmax=-1e32
@@ -62,7 +56,7 @@ def createAttractor():
             # Does the series tend to infinity
             if xmin < -1e10 or ymin < -1e10 or xmax > 1e10 or ymax > 1e10:
                 drawit = False
-                print "infinite attractor"
+                #print "infinite attractor"
                 break
 
             # Does the series tend to a point
@@ -70,7 +64,7 @@ def createAttractor():
             dy = y[i] - y[i-1]
             if abs(dx) < 1e-10 and abs(dy) < 1e-10:
                 drawit = False
-                print "point attractor"
+                #print "point attractor"
                 break
             
 
@@ -86,29 +80,24 @@ def createAttractor():
         # Classify the series according to lyapunov
         if drawit:
             if abs(lyapunov) < 10:
-                print "neutrally stable"
+#                print "neutrally stable"
                 drawit = False
             elif lyapunov < 0:
-                print "periodic {} ".format(lyapunov)
+#                print "periodic {} ".format(lyapunov)
                 drawit = False 
             else:
-                print "chaotic {} ".format(lyapunov) 
+#                print "chaotic {} ".format(lyapunov) 
+                drawit = True
             
         # Save the image
         if drawit:
-            saveAttractor(ax,ay,xmin,xmax,ymin,ymax,x,y)
+            sendAttractor(n,ax,ay,xmin,xmax,ymin,ymax,x,y)
+            break
 
-def saveAttractor(a,b,xmin,xmax,ymin,ymax,x,y):
+def sendAttractor(n,a,b,xmin,xmax,ymin,ymax,x,y):
     width, height = 500, 500
     
-    # Save the parameters
-#    with open("output/{}.txt".format(n), "w") as f:
-#        f.write("{} {} {} {}\n".format(xmin, ymin, xmax, ymax))
-#        for i in range(6):
-#            f.write("{} {}\n".format(a[i], b[i]))
-#        f.close()
-    
-    # Save the image
+    # Save the image to memory
     image = Image.new("RGBA", (width, height))
     draw = ImageDraw.Draw(image)
     
@@ -116,11 +105,15 @@ def saveAttractor(a,b,xmin,xmax,ymin,ymax,x,y):
         ix = width * (x[i] - xmin) / (xmax - xmin)
         iy = height * (y[i] - ymin) / (ymax - ymin)
         if i > 100:
-            draw.point([ix, iy], fill=OUTPUT_COLOUR)
+            draw.point([ix, iy], fill="black")
     
-#    image.save("output/{}.png".format(n), "PNG")
-    image.save(OUTPUT_PATH, "PNG")
+    f = cStringIO.StringIO()
+    image.save(f, "PNG")
+
+    print "Content-type:image/png"
+    print ""
+    f.seek(0)
+    print f.read()
 #    print "saved attractor to ./output/{}.png".format(n)
-    print "saved attractor to " + OUTPUT_PATH
 
 createAttractor()

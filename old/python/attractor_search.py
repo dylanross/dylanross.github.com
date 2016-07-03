@@ -10,7 +10,6 @@ parser = argparse.ArgumentParser(description='Search for chaos.')
 #parser.add_argument('-i', dest='maxiterations' metavar='N', type=int,
 #            help='Maximum iterations.')
 
-OUTPUT_COLOUR = "grey"
 OUTPUT_PATH = "../images/attractor.png"
 
 args = parser.parse_args()
@@ -116,7 +115,7 @@ def saveAttractor(a,b,xmin,xmax,ymin,ymax,x,y):
         ix = width * (x[i] - xmin) / (xmax - xmin)
         iy = height * (y[i] - ymin) / (ymax - ymin)
         if i > 100:
-            draw.point([ix, iy], fill=OUTPUT_COLOUR)
+            draw.point([ix, iy], fill="black")
     
 #    image.save("output/{}.png".format(n), "PNG")
     image.save(OUTPUT_PATH, "PNG")

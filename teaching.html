@@ -8,19 +8,19 @@
   <meta name="description" content="Dylan's homepage">
   <meta name="author" content="Dylan Ross">
 
-  <link rel="stylesheet" href="css/styles.css"> 
+  <link rel="stylesheet" href="css/styles.css">
+
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
 
-<body>
+<body bgcolor="#ff9933">
 	<script src="js/scripts.js"></script>
 
-	<div id="background"> 
-	<br>
-	<div id="menu">
-		<font size="5">DYLAN ROSS</font>
+	<div id="teaching_background"> 
+	<div id="teaching_menu">
+		<br>
 		<hr width=530>
 		<a href="index.html">HOME</a>
 		|
@@ -36,49 +36,173 @@
 		<hr width=530>
 	</div>
 
-	<div id="body">
+	<div id="teaching_body">
 		I teach on the following undergraduate courses at the
 		University of Edinburgh:
 		<br>
 		<br>
-		<b>Cells to Organisms</b> -- I maintain an online
-		simulation of cell proliferation and differentiation,
-		which students use in a ``dry'' practical. The students
-		have to experiment with different division, death, and
-		differentiation rates to produce robust populations of
-		each cell type in appropriate proportions.
+		<b>Cells to Organisms</b> : I maintain an online
+		simulation of cell proliferation and differentiation, which
+		students use in a ``dry'' practical. The students have to
+		experiment with different division, death, and differentiation
+		rates to produce robust populations of different cell types in
+		appropriate proportions.
 		<br>
 		<br>
 
-		<b>System Design Project</b> -- I mentor a team of ~6
-		students as they build a LEGO robot capable of playing
-		football. The students build the physical robot from
-		scratch, and also have to write their own sensing,
-		planning, and control code.
+		<b>System Design Project</b> : I mentor a team of ~6 students
+		as they build a LEGO robot capable of playing football against
+		other teams' robots. The students build the physical robot from
+		scratch, and also have to write their own sensing, planning,
+		and control code.
 		<br>
 		<br>
 
-		<b>Intelligent Autonomous Robotics</b> -- I help my
-		supervisor, Barbara Webb, run a series of practicals in
-		which students must program a Khepera robot to perform
-		tasks autonomously (i.e. without human intervention).
-		Tasks include avoiding obstacles, performing odometry /
-		dead reckoning, and collecting and returning ``food''
-		to a ``nest''. 
+		<b>Intelligent Autonomous Robotics</b> : I help my supervisor,
+		Barbara Webb, run a series of practicals in which students must
+		program a Khepera II robot to perform tasks autonomously (i.e.
+		without human intervention).  Tasks include avoiding obstacles,
+		performing odometry / dead reckoning, and collecting and
+		returning ``food'' to a ``nest''. 
 		<br>
 		<br>
 			
-		<b>General Neuroscience</b>
+		<b>General Neuroscience</b> : I facilitate for a set of journal
+		clubs in which final-year Neuroscience Honours students discuss
+		contemporary publications in neurobiology.
 		<br>
 		<br>
 
 		I also teach on the following masters-level courses :
 		<br>
-		<b>Introduction to Bioelectronics</b>
+		<br>
+		<b>Introduction to Bioelectronics</b> -- I give a guest lecture
+		on the use of Hodgkin-Huxley-type conductance-based neuron
+		models in theoretical biology research, and discuss some of the
+		unexpected implications of ion channel physiology for neural
+		dynamics and animal behaviour.
 	</div>
 	<div id="footer">
+		<br>
 		<hr width=530>
 	</div>
 	</div>
+
+<script language="JavaScript">
+
+
+
+//Comment trail script- By Kurt (kurt.grigg@virgin.net)
+
+//Script featured on Dynamic Drive
+
+//Visit http://www.dynamicdrive.com for this script and more
+
+
+
+colours=new Array('#ff0000','#00ff00','#ffffff','#ff00ff','#ffa500','#ffff00','#00ff00','#ffffff','ff00ff')
+
+n = 10;
+
+y = 0;
+
+x = 0;
+
+n6=(document.getElementById&&!document.all);
+
+ns=(document.layers);
+
+ie=(document.all);
+
+d=(ns||ie)?'document.':'document.getElementById("';
+
+a=(ns||n6)?'':'all.';
+
+n6r=(n6)?'")':'';
+
+s=(ns)?'':'.style';
+
+if (ns){
+
+for (i = 0; i < n; i++)
+
+document.write('<layer name="dots'+i+'" top=0 left=0 width='+i/2+' height='+i/2+' bgcolor=#ff0000></layer>');
+
+}
+
+if (ie)
+
+document.write('<div id="con" style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+
+if (ie||n6){
+
+for (i = 0; i < n; i++)
+
+document.write('<div id="dots'+i+'" style="position:absolute;top:0px;left:0px;width:'+i/2+'px;height:'+i/2+'px;background:#ff0000;font-size:'+i/2+'"></div>');
+
+}
+
+if (ie)
+
+document.write('</div></div>');
+
+(ns||n6)?window.captureEvents(Event.MOUSEMOVE):0;
+
+function Mouse(evnt){
+
+y = (ns||n6)?evnt.pageY+4 - window.pageYOffset:event.y+4;
+
+x = (ns||n6)?evnt.pageX+1:event.x+1;
+
+}
+
+(ns)?window.onMouseMove=Mouse:document.onmousemove=Mouse;
+
+function animate(){
+
+o=(ns||n6)?window.pageYOffset:0;
+
+if (ie)con.style.top=document.body.scrollTop + 'px';
+
+for (i = 0; i < n; i++){
+
+var temp1 = eval(d+a+"dots"+i+n6r+s);
+
+
+
+randcolours = colours[Math.floor(Math.random()*colours.length)];
+
+(ns)?temp1.bgColor = randcolours:temp1.background = randcolours; 
+
+if (i < n-1){
+
+ var temp2 = eval(d+a+"dots"+(i+1)+n6r+s);
+
+ temp1.top = parseInt(temp2.top) + 'px';
+
+ temp1.left = parseInt(temp2.left) + 'px';
+
+ } 
+
+else{
+
+ temp1.top = y+o + 'px';
+
+ temp1.left = x + 'px';
+
+ }
+
+}
+
+setTimeout("animate()",10);
+
+}
+
+animate();
+
+// -->
+
+</script>
+
 </body>
 </html>
